@@ -7,7 +7,7 @@ before_install:
 script:
   # for node and react
   - docker run  -e CI=true aminebelroulccie/docker-react npm run test
-  - docker build -t aminebelroulccie/docker-react .
+
 
 
 deploy:
