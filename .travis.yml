@@ -3,10 +3,10 @@ language: generic
 services:
   - docker
 before_install:
-  - docker build -t aminebelroulccie/docker-react -f Dockerfile.dev .
+  - docker build -t aminebelroulccie/docker-react  .
 script:
   # for node and react
-  - docker run -e CI=true aminebelroulccie/docker-react npm run test
+  - docker run  -e CI=true aminebelroulccie/docker-react npm run test
 deploy:
   provider: heroku
   api_key: "cbe7d290-5f19-4523-826b-67e0e8450179"
