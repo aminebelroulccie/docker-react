@@ -9,12 +9,12 @@ script:
   - docker run -e CI=true aminebelroulccie/docker-react npm run test
 deploy:
   provider: heroku
-  region: "europe"
+  api_key:
+    secure: "cbe7d290-5f19-4523-826b-67e0e8450179"
   app: "aminebelroulccie-docker"
   on:
     branch: master
-  api_key:
-    secure: "cbe7d290-5f19-4523-826b-67e0e8450179"
+
   #aws
 #  provider: elasticbeanstalk
 #  region: "europe"
