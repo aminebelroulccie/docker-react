@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+#mode developpemnt need to run in interactive shell use stdin_open and tty (like -it in docker cmd)
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+
+
