@@ -14,8 +14,7 @@ deploy:
   on:
     branch: master
 
-after_deploy:
-  - docker run -it aminebelroulccie/docker-react
+
 
 #aws
 #  provider: elasticbeanstalk
