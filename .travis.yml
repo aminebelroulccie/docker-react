@@ -5,4 +5,29 @@ services:
 before_install:
   - docker build -t aminebelroulccie/docker-react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true aminebelroulccie/docker-react npm run test 
+  # for node and react
+  - docker run -e CI=true aminebelroulccie/docker-react npm run test
+deploy:
+  provider: heroku
+  region: "europe"
+  app: "aminebelroulccie-docker"
+  on:
+    branch: master
+  api_key:
+    secure: "$API_KEY"
+  #aws
+#  provider: elasticbeanstalk
+#  region: "europe"
+#  app: "aminebelroulccie-docker"
+#  env: "Aminebelroulccie-docker-env"
+#  bucket_name: "s3 backet"
+#  bucket_path: "aminebelroulccie-docker"
+#  on:
+#    branch: master
+#  access_key_id: $API_ACCESS_KEY
+#  secret_access_key:
+#    secure: $API_SECURE_KEY
+
+
+
+
