@@ -16,8 +16,7 @@ deploy:
   app: "aminebelroulccie-docker"
   on:
     branch: master
-  script:
-    - docker run -t aminebelroulccie/docker-react
+  run: "docker run -t aminebelroulccie/docker-react"
 
 
 
