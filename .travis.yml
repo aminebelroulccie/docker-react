@@ -12,7 +12,7 @@ script:
 
 deploy:
   provider: heroku
-  api_key: "cbe7d290-5f19-4523-826b-67e0e8450179"
+  api_key: "7cf7770a-e975-4db8-8489-7b8e17b09e28"
   app: "aminebelroulccie-docker"
   on:
     branch: master
