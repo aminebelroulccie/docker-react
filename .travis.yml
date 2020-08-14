@@ -3,35 +3,36 @@ language: generic
 services:
   - docker
 before_install:
-  - docker build -t aminebelroulccie/docker-react  .
-#script:
-#  # for node and react
-#  - docker run  -e CI=true aminebelroulccie/docker-react npm run test
+  - docker build -t aminebelroulccie/docker-react -f Dockerfile.dev .
+script:
+
+   - docker run  -e CI=true aminebelroulccie/docker-react npm run test
 
 
 
-deploy:
-  provider: heroku
-  api_key: "7cf7770a-e975-4db8-8489-7b8e17b09e28"
-  app: "aminebelroulccie-docker"
-  on:
-    branch: master
-  run: docker run -t aminebelroulccie/docker-react
+#deploy:
+#  provider: heroku
+#  api_key: "7cf7770a-e975-4db8-8489-7b8e17b09e28"
+#  app: "aminebelroulccie-docker"
+#  on:
+#    branch: master
+#  run: docker run -t aminebelroulccie/docker-react
 
 
 
 #aws
-#  provider: elasticbeanstalk
-#  region: "europe"
-#  app: "aminebelroulccie-docker"
-#  env: "Aminebelroulccie-docker-env"
-#  bucket_name: "s3 backet"
-#  bucket_path: "aminebelroulccie-docker"
-#  on:
-#    branch: master
-#  access_key_id: $API_ACCESS_KEY
-#  secret_access_key:
-#    secure: $API_SECURE_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-626622621777"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $API_ACCESS_KEY
+  secret_access_key:
+    secure: "$API_SECURE_KEY"
 
 
 
