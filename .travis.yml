@@ -3,10 +3,10 @@ language: generic
 services:
   - docker
 before_install:
-  - docker build -t aminebelroulccie/docker-react -f Dockerfile.dev .
-script:
-
-   - docker run  -e CI=true aminebelroulccie/docker-react npm run test
+  - docker build -t aminebelroulccie/docker-react .
+#script:
+#
+#   - docker run  -e CI=true aminebelroulccie/docker-react npm run test
 
 
 
