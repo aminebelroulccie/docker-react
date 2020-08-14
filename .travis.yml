@@ -32,7 +32,7 @@ deploy:
     branch: master
   access_key_id: $API_ACCESS_KEY
   secret_access_key:
-    secure: "$API_SECURE_KEY"
+    secure: $API_SECURE_KEY
 
 
 
