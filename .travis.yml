@@ -16,10 +16,11 @@ deploy:
   app: "aminebelroulccie-docker"
   on:
     branch: master
+  script:
+    - docker run -t aminebelroulccie/docker-react
 
 
-after_deploy:
-  - docker run -t aminebelroulccie/docker-react
+
 #aws
 #  provider: elasticbeanstalk
 #  region: "europe"
